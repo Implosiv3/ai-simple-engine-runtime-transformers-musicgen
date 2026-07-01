@@ -1,6 +1,6 @@
 [project]
 name = "ai-simple-engine-runtime-transformers-musicgen"
-version = "0.0.2"
+version = "0.0.3"
 description = "AI Simple Engine Runtime Transformers Musicgen Module"
 authors = [
     {name = "danialcala94", email = "danielalcalavalera@gmail.com"}
@@ -10,13 +10,24 @@ requires-python = ">=3.10,<3.12"
 
 [tool.poetry.dependencies]
 # Mandatory
-ai-simple-engine = { version = ">=0.1.8,<1.0.0", optional = false }
+ai-simple-engine = { version = ">=0.1.10,<1.0.0", optional = false }
 ai-simple-engine-common = { version = ">=0.0.3,<1.0.0", optional = false }
+ai-simple-engine-musicgen = { version = ">=0.0.8,<1.0.0", optional = false }
 transformers = { version = ">=5.12.1,<9999.0.0", optional = false }
+# 'torch==2.5.1' was working in previous projects
+# TODO: Uncomment this for GPU version (~2.5GB)
+torch = { version = "==2.5.1", source = "pytorch", optional = false }
+# torch = { version = ">=2.12.1,<9999.0.0", optional = false }
 # Optional
 
 [tool.poetry]
 packages = [{include = "ai_simple_engine_runtime_transformers_musicgen", from = "src"}]
+
+[[tool.poetry.source]]
+name = "pytorch"
+url = "https://download.pytorch.org/whl/cu121"
+# url = "https://download.pytorch.org/whl/cu129"
+priority = "explicit"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.5"

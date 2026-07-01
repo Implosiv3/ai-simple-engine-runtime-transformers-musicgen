@@ -1,5 +1,5 @@
 from ai_simple_engine_runtime_transformers_musicgen.model.executor.transformers_musicgen_model_executor import TransformersMusicgenModelExecutor
-from ai_simple_engine_runtime_transformers_musicgen.model.executor.registry.musicgen_model_executor_registry import MusicgenModelExecutorRegistry
+from ai_simple_engine.models.executor.registry.family_model_executor_registry import FamilyModelExecutorRegistry
 from ai_simple_engine_runtime_transformers_musicgen.model.loader.musicgen_model_loader import MusicgenModelLoader
 from ai_simple_engine_runtime_transformers_musicgen.consts import MUSICGEN_MODEL_FAMILY
 from ai_simple_engine.engine_builder import EngineBuilder
@@ -14,43 +14,28 @@ class TransformersRuntimeMusicgenPlugin(
     functionality.
 
     This plugin includes:
-    - `MusicgenLoader`
-    - `TransformersMusicgenModelExecutor` (for
-    `musicgen`)
-
-    This plugin gives you the next operations:
-    - `GenerateMusic`
-
-    This plugin needs:
-    - At least one backend to download the `
+    - `MusicgenModelLoader`
+    - `TransformersMusicgenModelExecutor`
     """
 
     def register(
         self,
         builder: EngineBuilder
     ):
-        # Model loaders
         (
             builder
             .add_model_loader(MusicgenModelLoader())
         )
 
         """
-        Create the specific registry for the `musicgen`
-        model executor, register the specific model
-        executors, and register it as a service into
-        the builder.
+        We obtain the registry that handles the
+        model executors by the model's family,
+        and we register our specific model
+        executor that uses transformers.
         """
-        registry = MusicgenModelExecutorRegistry()
+        registry = builder.get_or_add_service(FamilyModelExecutorRegistry)
 
         registry.register(
             MUSICGEN_MODEL_FAMILY,
             TransformersMusicgenModelExecutor()
-        )
-
-        (
-            builder.add_service(
-                MusicgenModelExecutorRegistry,
-                registry
-            )
         )

@@ -1,12 +1,16 @@
-from ai_simple_engine_runtime_transformers_musicgen.model.executor.abstract import MusicgenModelExecutorAbstract
 from ai_simple_engine_runtime_transformers_musicgen.model.loaded_musicgen_model import LoadedMusicgenModel
 from ai_simple_engine.models.loaded_model import LoadedModel
+from ai_simple_engine_musicgen.model.executor.abstract import MusicgenModelExecutorAbstract
 from ai_simple_engine.types.audio import Audio
 
 
 class TransformersMusicgenModelExecutor(
-    MusicgenModelExecutorAbstract
+    MusicgenModelExecutorAbstract[LoadedMusicgenModel]
 ):
+    """
+    The `musicgen` model executor that uses
+    transformers.
+    """
 
     async def generate(
         self,

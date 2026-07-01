@@ -10,6 +10,10 @@ from transformers import AutoProcessor, MusicgenForConditionalGeneration
 class MusicgenModelLoader(
     ModelLoader
 ):
+    """
+    The `musicgen` model loader that uses
+    transformers.
+    """
     
     @property
     def family(
