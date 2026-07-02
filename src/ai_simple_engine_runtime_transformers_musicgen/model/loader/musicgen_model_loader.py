@@ -33,6 +33,9 @@ class MusicgenModelLoader(
         
         network.to(device.identifier)
 
+        sample_rate = processor.feature_extractor.sampling_rate
+        frame_rate = network.config.audio_encoder.frame_rate
+
         return LoadedModel(
             installed_model = installed_model,
             instance = LoadedMusicgenModel(
@@ -40,8 +43,8 @@ class MusicgenModelLoader(
                 network = network
             ),
             info = MusicgenModelInfo(
-                sample_rate = processor.feature_extractor.sampling_rate,
-                frame_rate = installed_model.audio_encoder.config.frame_rate
+                sample_rate = sample_rate,
+                frame_rate = frame_rate
             )
         )
 

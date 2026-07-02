@@ -1,6 +1,6 @@
 [project]
 name = "ai-simple-engine-runtime-transformers-musicgen"
-version = "0.0.4"
+version = "0.0.5"
 description = "AI Simple Engine Runtime Transformers Musicgen Module"
 authors = [
     {name = "danialcala94", email = "danielalcalavalera@gmail.com"}
