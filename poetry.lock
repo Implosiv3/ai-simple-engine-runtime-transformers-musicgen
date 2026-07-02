@@ -2,14 +2,14 @@
 
 [[package]]
 name = "ai-simple-engine"
-version = "0.1.10"
+version = "0.2.0"
 description = "AI Simple Engine"
 optional = false
 python-versions = "<3.12,>=3.10"
 groups = ["main"]
 files = [
-    {file = "ai_simple_engine-0.1.10-py3-none-any.whl", hash = "sha256:b6d69044cc870bcd71f25d9aaaa87d7d9599645a96a3f11f4fc6224d7c3ab6bf"},
-    {file = "ai_simple_engine-0.1.10.tar.gz", hash = "sha256:b614594b21362a2cea7263f5d12ad431fd4364393926712792c15a3fcfaf0ccd"},
+    {file = "ai_simple_engine-0.2.0-py3-none-any.whl", hash = "sha256:a82f1d404bdc262d45f8fdd65a5a7288582413ef885f2766291ce59eda40d76d"},
+    {file = "ai_simple_engine-0.2.0.tar.gz", hash = "sha256:de678254a2e526971467c3f9db8b56d3aa5f5519586dfdadf773374c5d16f80d"},
 ]
 
 [[package]]
@@ -26,18 +26,18 @@ files = [
 
 [[package]]
 name = "ai-simple-engine-musicgen"
-version = "0.0.8"
+version = "0.0.9"
 description = "AI Simple Engine Musicgen Module"
 optional = false
 python-versions = "<3.12,>=3.10"
 groups = ["main"]
 files = [
-    {file = "ai_simple_engine_musicgen-0.0.8-py3-none-any.whl", hash = "sha256:75162d8cf2f5d9c04b1a47872736062eaa6a7496c1bb9577dc22f131108fca42"},
-    {file = "ai_simple_engine_musicgen-0.0.8.tar.gz", hash = "sha256:81d7eb6ace61ca9423a823dfe3e19aa0ef9e0e052704fd000747a5ff9459f430"},
+    {file = "ai_simple_engine_musicgen-0.0.9-py3-none-any.whl", hash = "sha256:6154e1fc5951d9946de81e1d30c8a1a04940d9b244e6b15cbe2317c5944311e4"},
+    {file = "ai_simple_engine_musicgen-0.0.9.tar.gz", hash = "sha256:890da6e040122596b27f3631bd309fbcc9be0bd51e7c43caa7458f2ee07905ed"},
 ]
 
 [package.dependencies]
-ai-simple-engine = ">=0.1.9,<1.0.0"
+ai-simple-engine = ">=0.2.0,<1.0.0"
 ai-simple-engine-common = ">=0.0.3,<1.0.0"
 
 [[package]]
@@ -1414,4 +1414,4 @@ markers = {dev = "python_version == \"3.10\""}
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.10,<3.12"
-content-hash = "e4819e9f670d6a98fb4c5be6a35c7bf21009c7131ce9a941943d018673ca9a86"
+content-hash = "c5a884a296292e5e11d87c187725140ca32d3df984ece5dc02aecd64780822ab"

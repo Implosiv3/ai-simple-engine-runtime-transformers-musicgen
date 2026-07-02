@@ -1,6 +1,6 @@
 [project]
 name = "ai-simple-engine-runtime-transformers-musicgen"
-version = "0.0.3"
+version = "0.0.4"
 description = "AI Simple Engine Runtime Transformers Musicgen Module"
 authors = [
     {name = "danialcala94", email = "danielalcalavalera@gmail.com"}
@@ -10,9 +10,9 @@ requires-python = ">=3.10,<3.12"
 
 [tool.poetry.dependencies]
 # Mandatory
-ai-simple-engine = { version = ">=0.1.10,<1.0.0", optional = false }
+ai-simple-engine = { version = ">=0.2.0,<1.0.0", optional = false }
 ai-simple-engine-common = { version = ">=0.0.3,<1.0.0", optional = false }
-ai-simple-engine-musicgen = { version = ">=0.0.8,<1.0.0", optional = false }
+ai-simple-engine-musicgen = { version = ">=0.0.9,<1.0.0", optional = false }
 transformers = { version = ">=5.12.1,<9999.0.0", optional = false }
 # 'torch==2.5.1' was working in previous projects
 # TODO: Uncomment this for GPU version (~2.5GB)

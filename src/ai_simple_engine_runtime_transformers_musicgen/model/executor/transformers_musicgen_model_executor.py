@@ -1,4 +1,5 @@
 from ai_simple_engine_runtime_transformers_musicgen.model.loaded_musicgen_model import LoadedMusicgenModel
+from ai_simple_engine_runtime_transformers_musicgen.model.info.musicgen_model_info import MusicgenModelInfo
 from ai_simple_engine.models.loaded_model import LoadedModel
 from ai_simple_engine_musicgen.model.executor.abstract import MusicgenModelExecutorAbstract
 from ai_simple_engine.types.audio import Audio
@@ -14,7 +15,7 @@ class TransformersMusicgenModelExecutor(
 
     async def generate(
         self,
-        model: LoadedModel[LoadedMusicgenModel],
+        model: LoadedModel[LoadedMusicgenModel, MusicgenModelInfo],
         prompt: str,
         *,
         max_new_tokens: int,
